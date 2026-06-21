@@ -1,0 +1,63 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 15,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "win-app-config",
+            "displayName": "Configure build app",
+            "description": "Configuring a Windows emulator compiler using MinGW",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/_build/app",
+            "cacheVariables": {
+                "TARGET_PLATFORM": "WIN",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TEST": "OFF"
+            }
+        },
+        {
+            "name": "win-test-config",
+            "displayName": "Configure Build Unit Test",
+            "description": "Enable Unit Test, download Google Test",
+            "generator": "MinGW Makefiles",
+            "binaryDir": "${sourceDir}/_build/test",
+            "cacheVariables": {
+                "TARGET_PLATFORM": "WIN",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "BUILD_TEST": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "win-app",
+            "configurePreset": "win-app-config",
+            "targets": [
+                "pad_app"
+            ]
+        },
+        {
+            "name": "win-test",
+            "configurePreset": "win-test-config",
+            "targets": [
+                "domain_tests"
+            ]
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "win-test-run",
+            "displayName": "Run CTest",
+            "configurePreset": "win-test-config",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error"
+            }
+        }
+    ]
+}

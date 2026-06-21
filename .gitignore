@@ -1,0 +1,30 @@
+# ==========================================
+# CMake & Build Artifacts 
+# ==========================================
+_build/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+Makefile
+
+# ==========================================
+# Third-Party Libraries
+# ==========================================
+ThirdParty/*
+!ThirdParty/README.md
+
+# ==========================================
+# IDE & Tooling
+# ==========================================
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# ==========================================
+# OS Generated Files (Rác hệ điều hành)
+# ==========================================
+.DS_Store
+Thumbs.db

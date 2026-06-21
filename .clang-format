@@ -1,0 +1,35 @@
+---
+# Inherit the full Google style guide as the baseline.
+BasedOnStyle: Google
+
+# --- EMBEDDED PROJECT CUSTOMIZATIONS ---
+
+# Maximum line length
+ColumnLimit: 100
+
+# Indentation width
+IndentWidth: 3
+
+# Pointer asterisk (*) alignment
+PointerAlignment: Left
+
+# Automatically sort #include directives alphabetically
+SortIncludes: true
+
+# Indent case labels inside switch statements
+IndentCaseLabels: true
+
+# Keep short code blocks on a single line when appropriate
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+# Enforce line breaks before opening braces {}
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterFunction: true           # Place opening brace on a new line after function declarations
+  AfterControlStatement: Always # Place opening brace on a new line after if, else, for, while, etc.
+  AfterClass: true              # (Optional) Place opening brace on a new line after class/struct declarations
+  AfterEnum: true               # (Optional) Place opening brace on a new line after enum declarations
+
+---
