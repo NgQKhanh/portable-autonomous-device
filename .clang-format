@@ -5,7 +5,7 @@ BasedOnStyle: Google
 # --- EMBEDDED PROJECT CUSTOMIZATIONS ---
 
 # Maximum line length
-ColumnLimit: 100
+ColumnLimit: 120
 
 # Indentation width
 IndentWidth: 3
@@ -29,7 +29,8 @@ BreakBeforeBraces: Custom
 BraceWrapping:
   AfterFunction: true           # Place opening brace on a new line after function declarations
   AfterControlStatement: Always # Place opening brace on a new line after if, else, for, while, etc.
-  AfterClass: true              # (Optional) Place opening brace on a new line after class/struct declarations
-  AfterEnum: true               # (Optional) Place opening brace on a new line after enum declarations
+  AfterClass: true              # Place opening brace on a new line after class declarations
+  AfterStruct: true             # Place opening brace on a new line after struct declarations
+  AfterEnum: true               # Place opening brace on a new line after enum declarations
 
 ---
