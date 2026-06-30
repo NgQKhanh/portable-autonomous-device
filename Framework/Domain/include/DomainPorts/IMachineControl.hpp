@@ -6,7 +6,7 @@ namespace pad::framework::domain {
 
 class IMachineControl
 {
-  public:
+public:
    virtual bool sendControlCommand(const TargetGoal& goal) = 0;
    virtual ~IMachineControl() = default;
 };
