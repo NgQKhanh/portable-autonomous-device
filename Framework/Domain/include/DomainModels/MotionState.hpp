@@ -3,7 +3,7 @@
 #include <cstdint>
 
 #include "ControlFlags.hpp"
-#include "Kinematics.hpp"
+#include "DomainModels/Kinematics.hpp"
 
 namespace pad::framework::domain {
 

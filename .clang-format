@@ -33,4 +33,5 @@ BraceWrapping:
   AfterStruct: true             # Place opening brace on a new line after struct declarations
   AfterEnum: true               # Place opening brace on a new line after enum declarations
 
+AccessModifierOffset: -3
 ---
