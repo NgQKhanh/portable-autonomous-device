@@ -1,6 +1,6 @@
 #pragma once
 
-#include "TargetGoal.hpp"
+#include "DomainModels/TargetGoal.hpp"
 
 namespace pad::framework::domain {
 

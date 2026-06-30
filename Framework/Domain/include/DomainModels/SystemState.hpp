@@ -1,8 +1,8 @@
 #pragma once
 
-#include "EnvironmentState.hpp"
-#include "HardwareState.hpp"
-#include "MotionState.hpp"
+#include "DomainModels/EnvironmentState.hpp"
+#include "DomainModels/HardwareState.hpp"
+#include "DomainModels/MotionState.hpp"
 
 namespace pad::framework::domain {
 
