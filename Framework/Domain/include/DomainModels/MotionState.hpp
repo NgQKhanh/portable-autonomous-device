@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-#include "ControlFlags.hpp"
+#include "DomainModels/ControlTypes.hpp"
 #include "DomainModels/Kinematics.hpp"
 
 namespace pad::framework::domain {
