@@ -1,8 +1,10 @@
 #pragma once
 
+#include <cstdint>
+
 namespace pad::framework::domain {
 
-enum ControlMask
+enum class ControlMask : uint8_t
 {
    NONE = 0,
    MOTION = (1 << 0),
