@@ -1,9 +1,9 @@
 #pragma once
 
-#include "DomainModels/HardwareState.hpp"
-#include "DomainModels/SensorTypes.hpp"
+#include "CoreModels/HardwareState.hpp"
+#include "CoreModels/SensorTypes.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 class IHardwareMonitor
 {
@@ -12,4 +12,4 @@ public:
    virtual ~IHardwareMonitor() = default;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

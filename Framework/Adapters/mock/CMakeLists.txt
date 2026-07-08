@@ -15,6 +15,6 @@ target_include_directories(adapters PUBLIC include)
 # - 'infrastructure': Required for utility features like logging.
 target_link_libraries(adapters
     PRIVATE
-        domain
+        core
         infrastructure
 )

@@ -2,10 +2,10 @@
 
 #include <cstdint>
 
-#include "DomainModels/ControlTypes.hpp"
-#include "DomainModels/Kinematics.hpp"
+#include "CoreModels/ControlTypes.hpp"
+#include "CoreModels/Kinematics.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 struct MotionCommand
 {
@@ -24,4 +24,4 @@ struct CommandBundle
    LightCommand lightCmd;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

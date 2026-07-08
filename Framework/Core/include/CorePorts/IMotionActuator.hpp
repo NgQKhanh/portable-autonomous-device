@@ -1,8 +1,8 @@
 #pragma once
 
-#include "DomainModels/CommandTypes.hpp"
+#include "CoreModels/CommandTypes.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 class IMotionActuator
 {
@@ -12,4 +12,4 @@ public:
    virtual ~IMotionActuator() = default;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

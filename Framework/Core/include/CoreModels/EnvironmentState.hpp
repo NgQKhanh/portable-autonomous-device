@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 // Dummy data
 // TODO: using external config file to set obstacle sensor count
@@ -16,4 +16,4 @@ struct EnvironmentState
    bool cliffDetected;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

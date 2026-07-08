@@ -1,6 +1,6 @@
 #pragma once
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 struct Pose2D
 {
@@ -15,4 +15,4 @@ struct Velocity2D
    float angular;  // Angular velocity ω (rad/s)
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

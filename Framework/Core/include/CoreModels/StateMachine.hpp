@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 enum class OperationMode : uint8_t
 {
@@ -14,4 +14,4 @@ enum class OperationMode : uint8_t
    OP_MODE_COUNT
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

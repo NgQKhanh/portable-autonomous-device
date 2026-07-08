@@ -1,8 +1,8 @@
 #pragma once
 
-#include "DomainModels/TargetGoal.hpp"
+#include "CoreModels/TargetGoal.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 class IMachineControl
 {
@@ -11,4 +11,4 @@ public:
    virtual ~IMachineControl() = default;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

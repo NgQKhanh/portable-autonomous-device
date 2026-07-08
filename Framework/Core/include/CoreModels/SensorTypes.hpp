@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 enum class UpdateGroup : uint8_t
 {
@@ -10,4 +10,4 @@ enum class UpdateGroup : uint8_t
    SLOW
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core
