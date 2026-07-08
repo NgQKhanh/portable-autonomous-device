@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 enum class SystemFaultFlag : uint32_t
 {
@@ -19,4 +19,4 @@ struct SystemEvent
    uint32_t activeFaults;  // Bit mask of all currently active faults
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

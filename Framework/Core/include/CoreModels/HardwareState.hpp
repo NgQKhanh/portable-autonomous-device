@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 // Dummy data
 // TODO: using external config file to set sensor count
@@ -23,4 +23,4 @@ struct HardwareState
    DeviceStatus deviceStatus[SENSOR_COUNT];
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

@@ -1,7 +1,7 @@
-# pad_src/Framework/Domain/CMakeLists.txt
+# pad_src/Framework/Core/CMakeLists.txt
 
-# Create a static library for the DOMAIN implementation
-add_library(domain STATIC
+# Create a static library for the CORE implementation
+add_library(core STATIC
     src/MachineController.cpp
     src/StateMachine.cpp
     src/SafetyMonitor.cpp
@@ -10,4 +10,4 @@ add_library(domain STATIC
 )
 
 # Specify the public include directories for this target
-target_include_directories(domain PUBLIC include)
+target_include_directories(core PUBLIC include)

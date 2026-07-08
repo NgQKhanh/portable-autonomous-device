@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 enum class ControlMask : uint8_t
 {
@@ -12,4 +12,4 @@ enum class ControlMask : uint8_t
    CTR_MASK_CNT,
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

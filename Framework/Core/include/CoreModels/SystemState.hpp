@@ -1,10 +1,10 @@
 #pragma once
 
-#include "DomainModels/EnvironmentState.hpp"
-#include "DomainModels/HardwareState.hpp"
-#include "DomainModels/MotionState.hpp"
+#include "CoreModels/EnvironmentState.hpp"
+#include "CoreModels/HardwareState.hpp"
+#include "CoreModels/MotionState.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 struct SystemState
 {
@@ -13,4 +13,4 @@ struct SystemState
    MotionState motionState;            // Device motion status: speed, tilt angle, etc.
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core

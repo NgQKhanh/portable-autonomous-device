@@ -1,8 +1,8 @@
 #pragma once
 
-#include "DomainModels/CommandTypes.hpp"
+#include "CoreModels/CommandTypes.hpp"
 
-namespace pad::framework::domain {
+namespace pad::framework::core {
 
 class ILightActuator
 {
@@ -11,4 +11,4 @@ public:
    virtual ~ILightActuator() = default;
 };
 
-}  // namespace pad::framework::domain
+}  // namespace pad::framework::core
