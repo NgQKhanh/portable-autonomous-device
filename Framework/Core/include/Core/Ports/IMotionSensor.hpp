@@ -1,8 +1,8 @@
 #pragma once
 
-#include "CoreModels/HardwareState.hpp"
-#include "CoreModels/MotionState.hpp"
-#include "CoreModels/SensorTypes.hpp"
+#include "Core/Models/HardwareState.hpp"
+#include "Core/Models/MotionState.hpp"
+#include "Core/Models/SensorTypes.hpp"
 
 namespace pad::framework::core {
 

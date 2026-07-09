@@ -2,8 +2,8 @@
 
 #include <cstdint>
 
-#include "CoreModels/ControlTypes.hpp"
-#include "CoreModels/Kinematics.hpp"
+#include "Core/Models/ControlTypes.hpp"
+#include "Core/Models/Kinematics.hpp"
 
 namespace pad::framework::core {
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CoreModels/CommandTypes.hpp"
+#include "Core/Models/CommandTypes.hpp"
 
 namespace pad::framework::core {
 

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CoreModels/TargetGoal.hpp"
+#include "Core/Models/TargetGoal.hpp"
 
 namespace pad::framework::core {
 
