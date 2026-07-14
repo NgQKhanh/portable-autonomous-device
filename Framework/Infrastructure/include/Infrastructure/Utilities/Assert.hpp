@@ -2,6 +2,8 @@
 
 #include <cstdint>
 
+#include "Infrastructure/Configuration/BuildConfig.hpp"
+
 namespace pad::framework::infrastructure::utilities {
 
 struct AssertFailureInfo
@@ -17,7 +19,7 @@ struct AssertFailureInfo
 
 }  // namespace pad::framework::infrastructure::utilities
 
-#ifdef PAD_ASSERT_ENABLE
+#if PAD_ASSERT_ENABLE
 
 #define PAD_ASSERT(expr)                                                       \
    do                                                                          \
