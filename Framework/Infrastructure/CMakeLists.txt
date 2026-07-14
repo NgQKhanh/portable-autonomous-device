@@ -2,7 +2,7 @@
 
 # Create a static library for the INFRASTRUCTURE implementation
 add_library(infrastructure STATIC
-    src/Logger.cpp
+    src/Logging/Logger.cpp
 )
 
 # Specify the public include directories for this target
