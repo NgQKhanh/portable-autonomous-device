@@ -13,7 +13,11 @@ uint8_t g_loggerCount = 0;
 
 }  // namespace
 
-void registerLogger(ILogger* logger) {};
+void registerLogger(ILogger* logger)
+{
+   g_loggers[g_loggerCount++] = logger;
+};
+
 void unRegisterLogger(ILogger* logger) {};
 void clearLogger() {};
 

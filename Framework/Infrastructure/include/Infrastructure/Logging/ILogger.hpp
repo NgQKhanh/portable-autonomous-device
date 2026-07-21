@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Infrastructure/Logging/Log.hpp"
+#include "Infrastructure/Logging/LogLevel.hpp"
 
 namespace pad::framework::infrastructure::logging {
 

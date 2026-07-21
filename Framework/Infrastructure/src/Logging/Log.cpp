@@ -12,6 +12,21 @@ namespace {
 
 constexpr std::size_t LOG_BUFFER_SIZE = 256;
 
+constexpr const char* baseName(const char* path)
+{
+   const char* file = path;
+
+   while (*path != '\0')
+   {
+      if (*path == '/' || *path == '\\')
+      {
+         file = path + 1;
+      }
+      ++path;
+   }
+   return file;
+};
+
 }  // namespace
 
 void log(LogLevel level, const char* fileName, const char* func, const char* format, ...)
@@ -38,7 +53,7 @@ void log(LogLevel level, const char* fileName, const char* func, const char* for
    const char* safeFunc = (func != nullptr) ? func : "Unknown";
    const char* safeFileName = (fileName != nullptr) ? fileName : "Unknown";
 
-   LogRecord record{level, safeFileName, safeFunc, message};
+   LogRecord record{level, baseName(safeFileName), safeFunc, message};
 
    for (uint8_t i = 0; i < loggerCount; i++)
    {
