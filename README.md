@@ -16,7 +16,7 @@ This is the top-level executable layer. The Application layer is responsible for
 
 ### 2.2 Framework Layer
 This layer provides the reusable foundation and control architecture for autonomous smart appliance applications. It contains the following internal modules:
-* **Domain Module:** "brain" of the system, containing the core control logic that drives the system's behavior.
+* **Core Module:** "brain" of the system, containing the core control logic that drives the system's behavior.
 * **Platform Module:** Provides OS-level abstractions and system runtime services.
 * **Adapters Module:** Integrations with hardware, simulations, and external systems.
 * **Infrastructure Module:** Provides common technical services such as logging, configuration, diagnostics, and utilities.
@@ -28,7 +28,7 @@ This layer provides the reusable foundation and control architecture for autonom
 pad_src/
 ├── Application/
 ├── Framework/
-│   ├── Domain/
+│   ├── Core/
 │   ├── Platform/
 │   ├── Adapters/
 │   └── Infrastructure/

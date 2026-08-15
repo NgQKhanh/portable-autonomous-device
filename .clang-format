@@ -4,8 +4,8 @@ BasedOnStyle: Google
 
 # --- EMBEDDED PROJECT CUSTOMIZATIONS ---
 
-# Maximum line length
-ColumnLimit: 120
+# Disable line length
+ColumnLimit: 0
 
 # Indentation width
 IndentWidth: 3
