@@ -30,7 +30,7 @@ constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config
 struct LidarData
 {
    Timestamp timestamp{};
-   float ranges[MAX_SCAN_POINTS];
+   float ranges[MAX_SCAN_POINTS]{};
 
    float angleMin = 0.0f;
    float angleMax = 0.0f;
