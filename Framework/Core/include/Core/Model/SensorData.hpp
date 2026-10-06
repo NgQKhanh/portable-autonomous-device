@@ -15,10 +15,11 @@ struct BatteryData
    bool isCharging = false;
 };
 
-struct EncoderData
+struct WheelsVelocity
 {
    Timestamp timestamp{};
-   uint32_t tickCount = 0;
+   float* velocities = nullptr;
+   uint8_t wheelsCount = 0;
 };
 
 constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config
