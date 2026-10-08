@@ -14,7 +14,10 @@ class DifferentialDriveKinematics : public IKinematics
 {
 public:
    explicit DifferentialDriveKinematics(const DifferentialDriveConfig& config);
-   Velocity2D calculate(const WheelsVelocity& wheelsVelocity) override;
+   Velocity2D calculate(const WheelsVelocity& wheelsVelocity) const override;
+
+private:
+   DifferentialDriveConfig m_config;
 };
 
 }  // namespace pad::framework::core

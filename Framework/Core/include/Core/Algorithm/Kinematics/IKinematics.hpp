@@ -8,7 +8,7 @@ namespace pad::framework::core {
 class IKinematics
 {
 public:
-   virtual Velocity2D calculate(const WheelsVelocity& wheelsVelocity) = 0;
+   virtual Velocity2D calculate(const WheelsVelocity& wheelsVelocity) const = 0;
    virtual ~IKinematics() = default;
 };
 

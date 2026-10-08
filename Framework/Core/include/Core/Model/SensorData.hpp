@@ -15,11 +15,11 @@ struct BatteryData
    bool isCharging = false;
 };
 
+constexpr uint8_t MAX_WHEELS = 2;  // TODO: using config
 struct WheelsVelocity
 {
    Timestamp timestamp{};
-   float* velocities = nullptr;
-   uint8_t wheelsCount = 0;
+   float velocities[MAX_WHEELS]{};
 };
 
 constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config

@@ -24,8 +24,6 @@ public:
    ~SensorAggregator();
 
    bool validateStatus(DeviceId id, DeviceStatus status);
-   bool validate(const BatteryData& data);
-   bool validate(const Lidar2DData& data);
 
    WheelsVelocity getWheelsVelocity() const;
    Velocity2D getVelocity2D() const;
