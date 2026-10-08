@@ -12,6 +12,7 @@ struct Pose2D
    float x = 0.0f;      // X position (m)
    float y = 0.0f;      // Y position (m)
 };
+
 struct Velocity2D
 {
    float linear = 0.0f;   // Linear velocit (m/s)

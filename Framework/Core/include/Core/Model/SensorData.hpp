@@ -14,32 +14,38 @@ struct BatteryData
    uint8_t percentage = 0;  // 0 - 100%
    bool isCharging = false;
 };
-struct EncoderData
+
+struct WheelsVelocity
 {
    Timestamp timestamp{};
-   uint32_t leftTickCount = 0;
-   uint32_t rightTickCount = 0;
+   float* velocities = nullptr;
+   uint8_t wheelsCount = 0;
 };
-struct ImuData
-{
-   Timestamp timestamp{};
-   Vector3 acceleration{};     // m/s^2
-   Vector3 angularVelocity{};  // rad/s
-};
+
 constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config
-struct LidarData
+struct Lidar2DData
 {
    Timestamp timestamp{};
    float ranges[MAX_SCAN_POINTS]{};
+   uint8_t intensities[MAX_SCAN_POINTS]{};
 
    float angleMin = 0.0f;
    float angleMax = 0.0f;
    float angleIncrement = 0.0f;
 };
+
+enum CollisionSide
+{
+   FRONT = 0,
+   BACK,
+   LEFT,
+   RIGHT,
+   MAX_COL_SIDE
+};
 struct CollisionData
 {
    Timestamp timestamp{};
-   bool hasCollision = false;
+   bool hasCollision[CollisionSide::MAX_COL_SIDE]{};
 };
 
 }  // namespace pad::framework::core
