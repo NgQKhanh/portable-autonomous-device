@@ -19,6 +19,8 @@ struct AssertFailureInfo
 
 }  // namespace pad::framework::infrastructure::utilities
 
+// clang-format off
+
 #if PAD_ASSERT_ENABLE
 
 #define PAD_ASSERT(expr)                                                       \
@@ -60,3 +62,29 @@ struct AssertFailureInfo
       };                                                                    \
       pad::framework::infrastructure::utilities::handleAssertFailure(info); \
    } while (0)
+
+#define PAD_FATAL(expr)                                                        \
+   do                                                                          \
+   {                                                                           \
+      if (!(expr))                                                             \
+      {                                                                        \
+         pad::framework::infrastructure::utilities::AssertFailureInfo info{    \
+             #expr, __FILE__, __func__, nullptr, __LINE__,                     \
+         };                                                                    \
+         pad::framework::infrastructure::utilities::handleAssertFailure(info); \
+      }                                                                        \
+   } while (0)
+
+#define PAD_FATAL_MSG(expr, msg)                                               \
+   do                                                                          \
+   {                                                                           \
+      if (!(expr))                                                             \
+      {                                                                        \
+         pad::framework::infrastructure::utilities::AssertFailureInfo info{    \
+               #expr, __FILE__, __func__, msg, __LINE__,                       \
+         };                                                                    \
+         pad::framework::infrastructure::utilities::handleAssertFailure(info); \
+      }                                                                        \
+   } while (0)
+
+// clang-format on
