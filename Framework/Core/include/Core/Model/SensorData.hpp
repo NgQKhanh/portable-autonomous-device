@@ -15,11 +15,16 @@ struct BatteryData
    bool isCharging = false;
 };
 
-constexpr uint8_t MAX_WHEELS = 2;  // TODO: using config
+enum Wheel
+{
+   LEFT = 0,
+   RIGHT,
+   MAX_WHEELS
+};
 struct WheelsVelocity
 {
    Timestamp timestamp{};
-   float velocities[MAX_WHEELS]{};
+   float velocities[Wheel::MAX_WHEELS]{};
 };
 
 constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config
