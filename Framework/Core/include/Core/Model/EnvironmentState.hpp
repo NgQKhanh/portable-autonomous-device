@@ -4,14 +4,14 @@
 
 #include "Core/Model/Common.hpp"
 #include "Core/Model/SensorData.hpp"
+#include "PadParameters.hpp"
 
 namespace pad::framework::core {
 
-constexpr uint16_t MAX_POINT_CLOUD_POINTS = 72;  // TODO: using config
 struct PointCloud
 {
    Timestamp timestamp;
-   Point2D points[MAX_POINT_CLOUD_POINTS];
+   Point2D points[config::MAX_POINT_CLOUD_POINTS];
 };
 
 struct EnvironmentState

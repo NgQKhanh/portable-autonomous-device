@@ -1,15 +1,20 @@
 #pragma once
 
+#include <cstdint>
+
+#cmakedefine CONFIG_DIFFERENTIAL_2WD
+#cmakedefine CONFIG_LIDAR_2D
+#cmakedefine CONFIG_COLLISION
+
 namespace pad::framework::core::config {
 
 // clang-format off
 
-inline constexpr int MAX_POINT_CLOUD_POINTS = @PAD_MAX_POINT_CLOUD_POINTS@;
-inline constexpr int MAX_SCAN_POINTS = @PAD_MAX_SCAN_POINTS@;
+inline constexpr uint16_t MAX_POINT_CLOUD_POINTS = @PAD_MAX_POINT_CLOUD_POINTS@;
+inline constexpr uint16_t MAX_SCAN_POINTS = @PAD_MAX_SCAN_POINTS@;
 
 inline constexpr float MAX_VOLTAGE = @PAD_MAX_VOLTAGE@f;
 inline constexpr float MAX_CURRENT = @PAD_MAX_CURRENT@f;
-inline constexpr float FULL_CIRCLE_DEGREES = @PAD_FULL_CIRCLE_DEGREES@f;
 
 // clang-format on
 }  // namespace pad::framework::core::config
