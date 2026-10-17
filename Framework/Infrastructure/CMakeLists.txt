@@ -2,9 +2,12 @@
 
 # Create a static library for the INFRASTRUCTURE implementation
 add_library(infrastructure STATIC
+    # Logging
     src/Logging/ConsoleLogger.cpp
     src/Logging/Log.cpp
     src/Logging/LogService.cpp
+
+    # Utilities
     src/Utilities/Assert.cpp
 )
 

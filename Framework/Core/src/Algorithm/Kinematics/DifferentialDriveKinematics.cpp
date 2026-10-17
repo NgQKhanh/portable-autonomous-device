@@ -19,8 +19,8 @@ DifferentialDriveKinematics::DifferentialDriveKinematics(const DifferentialDrive
 
 Velocity2D DifferentialDriveKinematics::calculate(const WheelsVelocity& wheelsVelocity) const
 {
-   const float v_left = wheelsVelocity.velocities[Wheel::LEFT] * m_config.wheelRadius;
-   const float v_right = wheelsVelocity.velocities[Wheel::RIGHT] * m_config.wheelRadius;
+   const float v_left = wheelsVelocity.velocities[Wheel::WHEEL_LEFT] * m_config.wheelRadius;
+   const float v_right = wheelsVelocity.velocities[Wheel::WHEEL_RIGHT] * m_config.wheelRadius;
 
    Velocity2D velocity{};
    velocity.linear = (v_left + v_right) / 2.0f;

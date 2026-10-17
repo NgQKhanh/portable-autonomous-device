@@ -17,8 +17,8 @@ struct BatteryData
 
 enum Wheel
 {
-   LEFT = 0,
-   RIGHT,
+   WHEEL_LEFT = 0,
+   WHEEL_RIGHT,
    MAX_WHEELS
 };
 struct WheelsVelocity
@@ -41,10 +41,10 @@ struct Lidar2DData
 
 enum CollisionSide
 {
-   FRONT = 0,
-   BACK,
-   LEFT,
-   RIGHT,
+   COL_FRONT = 0,
+   COL_BACK,
+   COL_LEFT,
+   COL_RIGHT,
    MAX_COL_SIDE
 };
 struct CollisionData
