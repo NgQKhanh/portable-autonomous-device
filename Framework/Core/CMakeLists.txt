@@ -5,4 +5,8 @@ add_library(core STATIC
 )
 
 # Specify the public include directories for this target
-target_include_directories(core PUBLIC include)
+target_include_directories(core 
+   PUBLIC 
+      include
+      "${CMAKE_BINARY_DIR}/generated"
+)
