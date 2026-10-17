@@ -9,10 +9,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 #--- CONFIGURATION ---
 
 set(PAD_CONFIG "ver_mvp" CACHE STRING "Target configuration")
-set(PAD_CONFIG_FILE "${CMAKE_SOURCE_DIR}/cmake/${PAD_CONFIG}_config.cmake")
+set(PAD_CONFIG_FILE "${CMAKE_SOURCE_DIR}/configs/${PAD_CONFIG}_config.cmake")
 
 if(NOT EXISTS "${PAD_CONFIG_FILE}")
-  message(FATAL_ERROR "Robot configuration file not found: ${PAD_CONFIG_FILE}")
+  message(FATAL_ERROR "PAD configuration file not found: ${PAD_CONFIG_FILE}")
 endif()
 
 include("${PAD_CONFIG_FILE}")
@@ -21,8 +21,8 @@ include("${PAD_CONFIG_FILE}")
 set(GENERATED_DIR "${CMAKE_BINARY_DIR}/generated")
 file(MAKE_DIRECTORY "${GENERATED_DIR}")
 configure_file(
-  "${CMAKE_SOURCE_DIR}/configs/RobotParameters.hpp.in"
-  "${GENERATED_DIR}/RobotParameters.hpp"
+  "${CMAKE_SOURCE_DIR}/configs/PadParameters.hpp.in"
+  "${GENERATED_DIR}/PadParameters.hpp"
   @ONLY
 )
 

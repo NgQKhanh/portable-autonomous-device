@@ -1,1 +1,8 @@
 # File: ver_mvp_config.cmake
+
+set (PAD_MAX_POINT_CLOUD_POINTS 72)
+set (PAD_MAX_SCAN_POINTS 720)
+
+set (PAD_MAX_VOLTAGE 100.0)
+set (PAD_MAX_CURRENT 100.0)
+set (PAD_FULL_CIRCLE_DEGREES 360.0)
