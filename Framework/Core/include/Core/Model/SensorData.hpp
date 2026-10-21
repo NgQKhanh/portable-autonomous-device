@@ -3,9 +3,13 @@
 #include <cstdint>
 
 #include "Core/Model/Common.hpp"
+#include "PadParameters.hpp"
 
 namespace pad::framework::core {
 
+// ------------------------------------------------------------------------------------------------
+// Power data and electrical metrics of the system
+// ------------------------------------------------------------------------------------------------
 struct BatteryData
 {
    Timestamp timestamp{};
@@ -15,37 +19,60 @@ struct BatteryData
    bool isCharging = false;
 };
 
+// ------------------------------------------------------------------------------------------------
+// Wheels definition and kinematics data
+// ------------------------------------------------------------------------------------------------
+#ifdef CONFIG_DIFFERENTIAL_2WD
+enum Wheel
+{
+   WHEEL_LEFT = 0,
+   WHEEL_RIGHT,
+   MAX_WHEELS
+};
+#else
+#error "Fatal Error: drive configuration flag is not defined!"
+#endif
+
 struct WheelsVelocity
 {
    Timestamp timestamp{};
-   float* velocities = nullptr;
-   uint8_t wheelsCount = 0;
+   float velocities[Wheel::MAX_WHEELS]{};
 };
 
-constexpr uint16_t MAX_SCAN_POINTS = 720;  // TODO: using config
+// ------------------------------------------------------------------------------------------------
+// Environment and perception data
+// ------------------------------------------------------------------------------------------------
+#ifdef CONFIG_LIDAR_2D
 struct Lidar2DData
 {
    Timestamp timestamp{};
-   float ranges[MAX_SCAN_POINTS]{};
-   uint8_t intensities[MAX_SCAN_POINTS]{};
+   float ranges[config::MAX_SCAN_POINTS]{};
+   uint8_t intensities[config::MAX_SCAN_POINTS]{};
 
    float angleMin = 0.0f;
    float angleMax = 0.0f;
    float angleIncrement = 0.0f;
 };
+#endif
 
+// ------------------------------------------------------------------------------------------------
+// Safety monitoring
+// ------------------------------------------------------------------------------------------------
+#ifdef CONFIG_COLLISION
 enum CollisionSide
 {
-   FRONT = 0,
-   BACK,
-   LEFT,
-   RIGHT,
+   COL_FRONT = 0,
+   COL_BACK,
+   COL_LEFT,
+   COL_RIGHT,
    MAX_COL_SIDE
 };
+
 struct CollisionData
 {
    Timestamp timestamp{};
    bool hasCollision[CollisionSide::MAX_COL_SIDE]{};
 };
+#endif
 
 }  // namespace pad::framework::core
