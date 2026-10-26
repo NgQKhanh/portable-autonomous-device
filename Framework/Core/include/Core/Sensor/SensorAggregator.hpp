@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Core/Algorithm/Kinematics/IKinematics.hpp"
-#include "Core/Model/Device.hpp"
 #include "Core/Model/SensorData.hpp"
 #include "Core/Model/SystemState.hpp"
 #include "Core/Sensor/ISensor.hpp"
@@ -23,10 +22,9 @@ public:
    explicit SensorAggregator(const SensorDependencies& dependencies);
    ~SensorAggregator();
 
-   bool validateStatus(DeviceId id, DeviceStatus status);
-
    WheelsVelocity getWheelsVelocity() const;
    Velocity2D getVelocity2D() const;
+   void estimateVelocity2D();
 
 private:
    ISensor<WheelsVelocity>& m_wheels;

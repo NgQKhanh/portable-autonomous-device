@@ -13,15 +13,25 @@ SensorAggregator::SensorAggregator(const SensorDependencies& dependencies)
 {
 }
 
-bool SensorAggregator::validateStatus(DeviceId id, DeviceStatus status)
+WheelsVelocity SensorAggregator::getWheelsVelocity() const
 {
-   if (status != DeviceStatus::OK)
+   SensorResult<WheelsVelocity> result = m_wheels.read();
+   if (result.status != DeviceStatus::OK)
    {
-      LOG_ERR("Validate device status failed - id: %d, status: %d", static_cast<int>(id), static_cast<int>(status));
-      // TODO: process not ok status
-      return false;
+      LOG_ERR("Failed to read wheels velocity");
+      return {};
    }
-   return true;
+   return result.data;
+}
+
+Velocity2D SensorAggregator::getVelocity2D() const
+{
+   return m_systemState.motionState.currentVelocity;
+}
+
+void SensorAggregator::estimateVelocity2D()
+{
+   m_systemState.motionState.currentVelocity = m_kinematics.calculate(getWheelsVelocity());
 }
 
 }  // namespace pad::framework::core
