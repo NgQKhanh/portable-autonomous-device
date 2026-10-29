@@ -43,7 +43,7 @@
             "name": "win-test",
             "configurePreset": "win-test-config",
             "targets": [
-                "domain_tests"
+                "pad_test"
             ]
         }
     ],
