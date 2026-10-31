@@ -8,9 +8,14 @@
 
 namespace pad::framework::core {
 
+struct PowerState
+{
+   BatteryData battery;
+};
+
 struct DeviceState
 {
-   BatteryData powerState;
+   PowerState powerState;
    DeviceStatus devices[DEVICE_COUNT];
 };
 
