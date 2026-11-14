@@ -5,6 +5,7 @@ add_library(core STATIC
 
    # Algorithm
    src/Algorithm/Kinematics/DifferentialDriveKinematics.cpp
+   src/Algorithm/Lidar/ConvertToPointCloud.cpp
 
    # Sensor
    src/Sensor/SensorAggregator.cpp

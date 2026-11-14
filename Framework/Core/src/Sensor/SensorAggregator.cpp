@@ -13,15 +13,101 @@ SensorAggregator::SensorAggregator(const SensorDependencies& dependencies)
 {
 }
 
-bool SensorAggregator::validateStatus(DeviceId id, DeviceStatus status)
+bool SensorAggregator::isTimestampValid(Timestamp timestamp) const
 {
-   if (status != DeviceStatus::OK)
+   // TODO: Implementation for timestamp validation
+   return true;
+}
+
+SystemState SensorAggregator::getSystemState() const
+{
+   return m_systemState;
+}
+
+PowerState SensorAggregator::getPowerState() const
+{
+   return m_systemState.deviceState.powerState;
+}
+
+bool SensorAggregator::updateBatteryData()
+{
+   SensorResult<BatteryData> result = m_battery.read();
+   if (result.status != DeviceStatus::OK)
    {
-      LOG_ERR("Validate device status failed - id: %d, status: %d", static_cast<int>(id), static_cast<int>(status));
-      // TODO: process not ok status
+      LOG_ERR("Failed to read battery data");
       return false;
    }
+   if (!isTimestampValid(result.data.timestamp))
+   {
+      LOG_ERR("Invalid timestamp for battery data");
+      return false;
+   }
+   m_systemState.deviceState.powerState.battery = result.data;
    return true;
+}
+
+WheelsVelocity SensorAggregator::getWheelsVelocity() const
+{
+   return m_wheelsVelocity;
+}
+
+bool SensorAggregator::updateWheelsVelocity()
+{
+   SensorResult<WheelsVelocity> result = m_wheels.read();
+   if (result.status != DeviceStatus::OK)
+   {
+      LOG_ERR("Failed to read wheels velocity");
+      return false;
+   }
+   if (!isTimestampValid(result.data.timestamp))
+   {
+      LOG_ERR("Invalid timestamp for wheels velocity");
+      return false;
+   }
+   m_wheelsVelocity = result.data;
+   return true;
+}
+
+Velocity2D SensorAggregator::getVelocity2D() const
+{
+   return m_systemState.motionState.currentVelocity;
+}
+
+void SensorAggregator::estimateVelocity2D()
+{
+   m_systemState.motionState.currentVelocity = m_kinematics.calculate(getWheelsVelocity());
+}
+
+Lidar2DData SensorAggregator::getLidar2DData() const
+{
+   return m_lidar2DData;
+}
+
+bool SensorAggregator::updateLidar2DData()
+{
+   SensorResult<Lidar2DData> result = m_lidar.read();
+   if (result.status != DeviceStatus::OK)
+   {
+      LOG_ERR("Failed to read LIDAR data");
+      return false;
+   }
+   if (!isTimestampValid(result.data.timestamp))
+   {
+      LOG_ERR("Invalid timestamp for LIDAR data");
+      return false;
+   }
+   m_lidar2DData = result.data;
+   return true;
+}
+
+PointCloud SensorAggregator::getPointCloud() const
+{
+   return m_systemState.environmentState.pointCloud;
+}
+
+void SensorAggregator::convertToPointCloud()
+{
+   m_systemState.environmentState.pointCloud = PointCloudConverter().convertToPointCloud2D(m_lidar2DData);
 }
 
 }  // namespace pad::framework::core

@@ -15,19 +15,22 @@ enum class DeviceStatus : uint8_t
 enum DeviceId
 {
    NONE,
-   //---------------- Sensors ----------------
+   //---------------- Motion ----------------
+#ifdef CONFIG_DIFFERENTIAL_2WD
    LEFT_WHEEL_ENCODER,
    RIGHT_WHEEL_ENCODER,
-   LIDAR_2D,
-   IMU_SENSOR,
-   BUMPER_SENSOR,
-   BATTERY_MONITOR,
-
-   //---------------- Actuators ---------------
    LEFT_MOTOR,
    RIGHT_MOTOR,
+#endif
 
-   //---------------- Interaction -------------
+   //---------------- Environment ----------------
+#ifdef CONFIG_LIDAR_2D
+   LIDAR_2D,
+#endif
+
+   //---------------- Safety ----------------
+   BUMPER_SENSOR,
+   BATTERY_MONITOR,
    BUZZER,
    EMERGENCY_BUTTON,
 
